@@ -2,11 +2,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
+use App\Topic;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Topic::class, function (Faker $faker) {
     return [
-        //
+        'title'=>$faker->sentence,
+        'content'=>$faker->paragraph
     ];
 });

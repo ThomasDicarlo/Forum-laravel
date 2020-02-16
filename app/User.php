@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->roles()->whereIn('name', $roles)->first();
     }
+
+    public function topics()
+    {
+        return $this->hasMany('App\Topic');
+    }
 }

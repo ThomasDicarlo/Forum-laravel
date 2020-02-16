@@ -19,9 +19,13 @@ Route::get('/', function () {
     return view('view1');
 });*/
 
-Route::get('/',function(){
+/*Route::get('/',function(){
     return view('welcome');
-});
+});*/
+
+Route::get('/','TopicController@index')->name('topics.index');
+Route::resource('topics','TopicController')->except(['index']);
+
 
 
 Auth::routes();
@@ -31,5 +35,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
     Route::resource('users','UsersController');
 });
+
+
 
 
