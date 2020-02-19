@@ -39,5 +39,9 @@ class AuthServiceProvider extends ServiceProvider
             return $user->isAdmin();
         });
 
+        Gate::define('banni', function ($user){
+            return $user->isBanni(['banni']);
+        });
+
     }
 }

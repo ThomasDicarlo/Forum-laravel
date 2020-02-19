@@ -52,6 +52,11 @@ class User extends Authenticatable
         return $this->roles()->whereIn('name', $roles)->first();
     }
 
+    public function isBanni(){
+
+        return $this->roles()->where('name','banni')->first();
+    }
+
     public function topics()
     {
         return $this->hasMany('App\Topic');

@@ -16,5 +16,6 @@ class RolesTableSeeder extends Seeder
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'auteur']);
         Role::create(['name' => 'utilisateur']);
+        Role::create(['name' => 'banni']);
     }
 }

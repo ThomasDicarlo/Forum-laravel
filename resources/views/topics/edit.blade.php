@@ -21,7 +21,7 @@
                 <div class="invalid-feedback">{{ $errors->first('content') }}</div>
                 @enderror
             </div>
-            @can('edit-users')
+            @can('delete-users')
             <button type="submit" class="btn btn-primary">Modifier le topic</button>
                 @endcan
         </form>

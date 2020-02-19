@@ -37,6 +37,8 @@ class UsersTableSeeder extends Seeder
                     'password'=>Hash::make('password')
         ]);
 
+
+
         $adminRole = Role::where('name','admin')->first();
         $auteurRole = Role::where('name','auteur')->first();
         $utilisateurRole = Role::where('name','utilisateur')->first();
