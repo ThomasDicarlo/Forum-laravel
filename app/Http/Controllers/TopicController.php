@@ -108,4 +108,11 @@ class TopicController extends Controller
 
         return redirect('/');
     }
+
+    public function search(Request $request){
+        $search = $request->get('search');
+        $topics = Topic::where('title', 'like', '%'.$search.'%')->orWhere('content', 'like', '%'.$search.'%')->paginate(5);
+        return view('topics.index',compact('topics'));
+
+    }
 }

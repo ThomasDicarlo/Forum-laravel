@@ -60,7 +60,9 @@
                 <div class="invalid-feedback">{{ $errors->first('content') }}</div>
                 @enderror
             </div>
+            @can('not-ban')
             <button type="submit" class="btn btn-primary">Commenter</button>
+                @endcan
         </form>
 
     </div>

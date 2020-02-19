@@ -35,13 +35,15 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasAnyRole(['auteur','admin']);
         });
 
+        Gate::define('not-ban', function ($user){
+            return $user->hasAnyRole(['auteur','admin','utilisateur']);
+        });
+
         Gate::define('delete-users', function ($user){
             return $user->isAdmin();
         });
 
-        Gate::define('banni', function ($user){
-            return $user->isBanni(['banni']);
-        });
+
 
     }
 }

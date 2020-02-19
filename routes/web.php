@@ -30,6 +30,8 @@ Route::post('/comments/{topic}','CommentController@store')->name('comments.store
 
 Auth::routes();
 
+Route::get('/search', 'TopicController@search');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
